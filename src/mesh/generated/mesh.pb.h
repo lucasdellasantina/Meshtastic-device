@@ -207,6 +207,10 @@ typedef struct _ToRadio {
     };
 } ToRadio;
 
+typedef struct _Mensaje {
+    int32_t dato1;
+    int32_t dato2;
+} Mensaje;
 
 /* Helper constants for enums */
 #define _HardwareModel_MIN HardwareModel_UNSET
@@ -354,6 +358,12 @@ X(a, STATIC,   SINGULAR, BOOL,     is_licensed,       7)
 #define User_CALLBACK NULL
 #define User_DEFAULT NULL
 
+#define Mensaje_FIELDLIST(X, a) \
+X(a, STATIC,   SINGULAR, INT32,    dato1,     1) \
+X(a, STATIC,   SINGULAR, INT32,    dato2,     2)
+#define Mensaje_CALLBACK NULL
+#define Mensaje_DEFAULT NULL
+
 #define RouteDiscovery_FIELDLIST(X, a) \
 X(a, STATIC,   REPEATED, FIXED32,  route,             2)
 #define RouteDiscovery_CALLBACK NULL
@@ -464,6 +474,7 @@ X(a, STATIC,   SINGULAR, BOOL,     mqtt_gateway,      2)
 
 extern const pb_msgdesc_t Position_msg;
 extern const pb_msgdesc_t User_msg;
+extern const pb_msgdesc_t Mensaje_msg;
 extern const pb_msgdesc_t RouteDiscovery_msg;
 extern const pb_msgdesc_t Routing_msg;
 extern const pb_msgdesc_t Data_msg;
@@ -478,6 +489,7 @@ extern const pb_msgdesc_t ToRadio_PeerInfo_msg;
 /* Defines for backwards compatibility with code written before nanopb-0.4.0 */
 #define Position_fields &Position_msg
 #define User_fields &User_msg
+#define Mensaje_fields &Mensaje_msg
 #define RouteDiscovery_fields &RouteDiscovery_msg
 #define Routing_fields &Routing_msg
 #define Data_fields &Data_msg

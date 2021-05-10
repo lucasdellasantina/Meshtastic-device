@@ -20,6 +20,7 @@
 #include "graphics/Screen.h"
 #include "main.h"
 #include "plugins/Plugins.h"
+#include "plugins/MensajePlugin.h"
 #include "sleep.h"
 #include "target_specific.h"
 #include <OneButton.h>
@@ -269,6 +270,7 @@ class ButtonThread : public OSThread
 
     static void userButtonDoublePressed()
     {
+        mensajePlugin->runOnce();
 #ifndef NO_ESP32
         disablePin();
 #endif

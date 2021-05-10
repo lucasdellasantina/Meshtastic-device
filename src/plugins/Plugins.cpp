@@ -1,5 +1,6 @@
 #include "plugins/ExternalNotificationPlugin.h"
 #include "plugins/NodeInfoPlugin.h"
+#include "plugins/MensajePlugin.h"
 #include "plugins/PositionPlugin.h"
 #include "plugins/RemoteHardwarePlugin.h"
 #include "plugins/ReplyPlugin.h"
@@ -22,6 +23,7 @@ void setupPlugins()
 {
     adminPlugin = new AdminPlugin();
     nodeInfoPlugin = new NodeInfoPlugin();
+    mensajePlugin = new MensajePlugin();
     positionPlugin = new PositionPlugin();
     textMessagePlugin = new TextMessagePlugin();
 
